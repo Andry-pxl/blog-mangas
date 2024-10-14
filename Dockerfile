@@ -1,7 +1,7 @@
 FROM php:8.1-fpm
 
-# Set working directory to /var/www/html
-WORKDIR /var/www/html
+# Set working directory
+WORKDIR /var/www
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -15,10 +15,9 @@ RUN apt-get update && apt-get install -y \
   vim \
   unzip \
   git \
-  curl
-
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+  curl \
+  libonig-dev \  # Ajoute cette ligne pour installer oniguruma
+&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
@@ -26,11 +25,11 @@ RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy application directory contents to /var/www/html
-COPY ../ /var/www/html
+# Copy existing application directory contents
+COPY . /var/www
 
-# Copy application directory permissions
-COPY --chown=www-data:www-data ../ /var/www/html
+# Copy existing application directory permissions
+COPY --chown=www-data:www-data . /var/www
 
 # Change current user to www-data
 USER www-data
