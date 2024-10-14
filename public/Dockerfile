@@ -9,7 +9,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Copier les fichiers de l'application dans le conteneur
 COPY . /var/www/html
-
+COPY composer.json /var/www/html/composer.json
+COPY composer.lock /var/www/html/composer.lock
+RUN composer install --optimize-autoloader --no-dev
 WORKDIR /var/www/html
 
 # Installer les dépendances PHP
