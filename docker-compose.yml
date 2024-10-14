@@ -19,8 +19,10 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: chinese_services_plateform
-      MYSQL_ROOT_PASSWORD: "new_password"
+      MYSQL_ROOT_PASSWORD: root_password # Définit le mot de passe root pour MySQL
+      MYSQL_DATABASE: blog # Nom de la base de données à créer
+      MYSQL_USER: randy_rt # Nom d'utilisateur pour l'accès à la base de données
+      MYSQL_PASSWORD: user_password # Mot de passe pour l'utilisateur
     volumes:
       - db_data:/var/lib/mysql
 
