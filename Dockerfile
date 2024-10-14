@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
   unzip \
   git \
   curl \
-  libonig-dev \  # Ajoute cette ligne pour installer oniguruma
-&& apt-get clean && rm -rf /var/lib/apt/lists/*
+  libonig-dev \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
@@ -31,7 +31,7 @@ COPY . /var/www
 # Copy existing application directory permissions
 COPY --chown=www-data:www-data . /var/www
 
-# Change current user to www-data
+# Change current user to www
 USER www-data
 
 # Expose port 9000 and start php-fpm server
