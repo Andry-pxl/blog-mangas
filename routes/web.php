@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/ping', function () {
+  return ["sucess" => true];
+});
+
 
 /**
  * All_Routes of login and register
