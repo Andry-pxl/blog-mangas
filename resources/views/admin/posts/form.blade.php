@@ -34,3 +34,5 @@
       new TomSelect('select[multiple]', { plugins: {remove_button: { title: 'supprimer'}}, placeholder: 'Vuillez selectionner '});
 </script>
 </x-default-layout> 
+
+<!--commentaire-->
