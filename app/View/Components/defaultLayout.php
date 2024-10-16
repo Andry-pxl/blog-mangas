@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 
 
-class DefaultLayout extends AbstractLayout
+class defaultLayout extends AbstractLayout
 {
 
     /**
