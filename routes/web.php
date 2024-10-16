@@ -53,7 +53,7 @@ Route::get('/', [PostController::class, 'index'])->name('index');
 Route::get('/categories/{category}', [PostController::class, 'postByCategory'])->name('post.byCategory')->where(['slug' => $slug]);
 Route::get('/tags/{tag}', [PostController::class, 'postByTag'])->name('post.byTag')->where(['slug' => $slug]);
 Route::get('/{post}', [PostController::class, 'show'])->name('posts.show')->where(['slug' => $slug]);
-Route::post('/{post}/comment', [PostController::class, 'comment'])->name('posts.comment')->where(['slug' => $slug]);
+Route::patch('/{post}/comment', [PostController::class, 'comment'])->name('posts.comment')->where(['slug' => $slug]);
 
 
 /**
