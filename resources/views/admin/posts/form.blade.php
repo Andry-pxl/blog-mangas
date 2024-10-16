@@ -2,7 +2,7 @@
   <form action="{{$post->exists() ? route('admin.posts.update', ['post' => $post])  : route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @if ($post->exists())
-      @method('PATCH')
+      @method('POST')
     @endif
     <div class="space-y-12">
       <div class="pb-12 border-b border-gray-900/10">
