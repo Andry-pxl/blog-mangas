@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 
 
-class DefaultLayouts extends AbstractLayout
+class defaultLayout extends AbstractLayout
 {
 
     /**
@@ -14,10 +14,6 @@ class DefaultLayouts extends AbstractLayout
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.default');
+         return view('components.defaut-layout'); 
     }
 }
-
-
-
-
