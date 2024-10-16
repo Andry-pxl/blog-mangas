@@ -1,5 +1,5 @@
 <x-default-layout :title="$post->exists() ? 'Modifier un post' : 'Créer un post'">
-  <form action="{{$post->exists() ? route('admin.posts.update', ['post' => $post])  : route('admin.posts.store') }}"  enctype="multipart/form-data">
+  <form action="{{$post->exists() ? route('admin.posts.update', ['post' => $post])  : route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @if ($post->exists())
       @method('PATCH')
