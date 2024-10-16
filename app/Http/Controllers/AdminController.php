@@ -40,7 +40,7 @@ class AdminController extends Controller
         $post = Post::updateOrCreate(['id' => $post?->id], $data);
         $post->tags()->sync($data['tag_ids'] ?? null);
 
-        return to_route('posts.show', ['post' => $post])
+        return redirect()->route('posts.show', ['post' => $post])
             ->with('status', $post->wasRecentlyCreated ? 'Félicitation, votre post a été bien publié !' :
                 'Félicitation, votre post a été bien publié !');
     }
