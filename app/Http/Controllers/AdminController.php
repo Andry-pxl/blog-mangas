@@ -31,7 +31,7 @@ class AdminController extends Controller
             if (isset($post->thumbnail)) {
                 Storage::delete($post->thumbnail);
             }
-            $data['thumbnail'] = $data['thumbnail']->store('public');
+            $data['thumbnail'] = $data['thumbnail']->store('thumbnails');
         }
 
 
