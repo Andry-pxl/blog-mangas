@@ -46,6 +46,7 @@
         </div>
     </div>
     <div class="px-10 py-10 my-20 rounded">
+        <!---Pagination add->
         {{ $posts->links() }}
       </div>
 </x-default-layout>
