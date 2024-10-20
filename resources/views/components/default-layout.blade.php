@@ -11,7 +11,7 @@
      html, body {
         height: 100%;
         margin: 0;
-        background-color: rgba(254, 254, 254, 0.8);
+        background-color: #fffbf8 !important;
     }
     </style>
    
