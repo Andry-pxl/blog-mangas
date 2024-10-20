@@ -49,7 +49,7 @@
                      <svg xmlns="http://www.w3.org/2000/svg" color="violet" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
-                    {{--  <img class="w-8 h-8 rounded-full" src="{{ Gravatar::get(Auth::user()->email) }}" alt="image de profil"> --}}
+                    {{--  <imga class="w-8 h-8 rounded-full" src="{{ Gravatar::get(Auth::user()->email) }}" alt="image de profil"> --}}
                      @else
                         <svg xmlns="http://www.w3.org/2000/svg" color="violet" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
