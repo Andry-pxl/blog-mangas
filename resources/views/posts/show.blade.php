@@ -4,6 +4,7 @@
     @auth
         <form action="{{ route('posts.comment', ['post'=> $post]) }}" method="POST" class="px-5 py-3 rounded my-7">
             @csrf
+            @method('PATCH')
             <div class="flex h-12">
                 <input class="w-full px-5 rounded-lg bg-slate-50 text-slate-900 focus:outline focus:outline-2 focus:outline-indigo-500" type="text" name="comment" placeholder="Ecrire un commentaire... " autocomplete="off">
                 <button class="flex items-center justify-center w-12 ml-4 bg-indigo-700 rounded-full shrink-0 text-indigo-50">
